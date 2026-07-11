@@ -1,8 +1,22 @@
 # Forakis Refrigeration & Air Conditioning — Website
 
+**Live at https://forakisrefrigeration.com** (deployed July 2026).
+
 Production build of the approved design (see `../design_handoff_forakis_website/`).
-Plain HTML + CSS + vanilla JS — no build step, no dependencies. Deploy the contents
-of this folder to any static host (Netlify, Vercel, Cloudflare Pages, S3, shared hosting).
+Plain HTML + CSS + vanilla JS — no build step, no dependencies.
+
+## Hosting & deployment
+
+- **Host:** GitHub Pages, repo `gforakis/forakis-website` (public), branch `main`, root.
+- **Deploying changes:** commit to `main` and push — Pages redeploys automatically
+  (`git add -A && git commit -m "..." && git push` from this folder).
+- **Domain:** forakisrefrigeration.com, registered at Squarespace (expires Apr 2027,
+  account gforakis@gmail.com). DNS on Squarespace nameservers: 4 × A records `@` →
+  GitHub Pages IPs (185.199.108–111.153), CNAME `www` → `gforakis.github.io`.
+  The old Bluehost nameservers were discarded July 2026.
+- **Note:** old Google Workspace MX/SPF/DKIM records exist in Squarespace DNS
+  (inherited from Google Domains). No email is active on the domain; clean these up
+  if email @forakisrefrigeration.com is ever set up.
 
 ## Files
 
