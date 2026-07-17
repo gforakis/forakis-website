@@ -57,7 +57,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .nav__mark{width:41px;height:41px;display:block}
 .nav__lockup{display:flex;align-items:center;gap:11px}
 .nav__wordmark{font-family:var(--serif);font-weight:700;font-size:21px;line-height:1}
-.nav__subtitle{font-size:11px;color:var(--muted-2);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+.nav__subtitle{font-size:13px;color:var(--muted-2);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
 .nav__links{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500}
 .nav__link{color:var(--label)}
 .nav__link:hover{color:var(--ink)}
@@ -204,7 +204,7 @@ textarea.field__input{resize:vertical;min-height:calc(3lh + 24px)}
   .nav__mark{width:34px;height:34px}
   .nav__lockup{flex-direction:column;align-items:flex-start;gap:0}
   .nav__wordmark{font-size:19px;line-height:1.1}
-  .nav__subtitle{font-size:8.5px;margin-top:0}
+  .nav__subtitle{font-size:9.5px;margin-top:0}
   .nav__link{display:none}
   .nav__links{gap:0;flex-shrink:0}
   .nav__phone{border-radius:99px;font-weight:700;font-size:13px;padding:10px 14px;white-space:nowrap}
