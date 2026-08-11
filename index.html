@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 
 <script type="application/ld+json">
 {
@@ -47,6 +47,7 @@
     "name": "Bill Forakis"
   },
   "foundingDate": "1988",
+  "award": "Baltimore Heritage Historic Preservation Award — restoration & rehabilitation of the Senator Theatre",
   "priceRange": "$$"
 }
 </script>
@@ -123,8 +124,35 @@
 <!-- ============ SERVICES ============ -->
 <section class="services" aria-labelledby="services-title">
   <div class="services__inner">
-    <h2 id="services-title" class="services__title">What Bill works on</h2>
-    <p class="services__sub">Residential and commercial, install and repair — same standards, same person.<span class="d-text"> Serving Baltimore and the surrounding areas.</span></p>
+    <div class="services__header">
+      <div class="services__header-spacer" aria-hidden="true"></div>
+      <div class="services__heading">
+        <h2 id="services-title" class="services__title">What Bill works on</h2>
+        <p class="services__sub">Residential and commercial, install and repair — same standards, same person.<span class="d-text"> Serving Baltimore and the surrounding areas.</span></p>
+      </div>
+      <div class="award-block">
+        <svg class="award-stamp" viewBox="0 0 160 160" role="img" aria-labelledby="award-stamp-title">
+          <title id="award-stamp-title">Historic Preservation Award — Baltimore Heritage</title>
+          <circle cx="80" cy="80" r="78" fill="rgba(255,255,255,.96)"/>
+          <circle cx="80" cy="80" r="75.5" fill="none" stroke="#0e4d92" stroke-width="3"/>
+          <circle cx="80" cy="80" r="58" fill="none" stroke="#0e4d92" stroke-width="1.2"/>
+          <defs>
+            <path id="award-arc-top" d="M 18.5,80 A 61.5,61.5 0 0 1 141.5,80"/>
+          </defs>
+          <text font-family="'Libre Franklin',sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.2" fill="#0e4d92">
+            <textPath href="#award-arc-top" startOffset="50%" text-anchor="middle">BALTIMORE HERITAGE</textPath>
+          </text>
+          <path d="M 80 96.5 m -30 0 h 60" stroke="#9cc4ef" stroke-width="1.4" transform="translate(0,20)"/>
+          <path d="M 40 108 a 2.6 2.6 0 1 1 -0.01 0" fill="#9cc4ef" transform="translate(0,-3)"/>
+          <path d="M 117.4 108 a 2.6 2.6 0 1 1 -0.01 0" fill="#9cc4ef" transform="translate(0,-3)"/>
+          <path d="M 80 38 l 2.6 5.4 5.4 2.6 -5.4 2.6 -2.6 5.4 -2.6 -5.4 -5.4 -2.6 5.4 -2.6 Z" fill="#9cc4ef"/>
+          <text x="80" y="73" text-anchor="middle" font-family="'Source Serif 4',serif" font-size="14.5" font-weight="700" fill="#12263a">HISTORIC</text>
+          <text x="80" y="90" text-anchor="middle" font-family="'Source Serif 4',serif" font-size="14.5" font-weight="700" fill="#12263a">PRESERVATION</text>
+          <text x="80" y="107" text-anchor="middle" font-family="'Source Serif 4',serif" font-size="14.5" font-weight="700" fill="#12263a">AWARD</text>
+        </svg>
+        <p class="award-block__caption">Awarded a Historic Preservation Award from Baltimore Heritage for work at the Senator Theatre.</p>
+      </div>
+    </div>
     <div class="services__cards">
       <div class="card">
         <h3 class="card__title">Air conditioning</h3>
@@ -169,12 +197,14 @@
       <footer class="pullquote__attr">Bill Forakis, owner &amp; operator</footer>
     </blockquote>
   </div>
-  <img class="about__photo" loading="lazy"
-       src="images/service-van-900.jpg"
-       srcset="images/service-van-450.jpg 450w, images/service-van-900.jpg 900w"
-       sizes="(min-width: 900px) 460px, 100vw"
-       width="900" height="600"
-       alt="Service van in the driveway of a Baltimore-area home">
+  <div class="about__media">
+    <img class="about__photo" loading="lazy"
+         src="images/service-van-900.jpg"
+         srcset="images/service-van-450.jpg 450w, images/service-van-900.jpg 900w"
+         sizes="(min-width: 900px) 460px, 100vw"
+         width="900" height="600"
+         alt="Service van in the driveway of a Baltimore-area home">
+  </div>
 </section>
 
 <!-- ============ COMBINED REQUEST FORM ============ -->

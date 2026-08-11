@@ -66,6 +66,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
 /* ============ HERO ============ */
 .hero__intro{text-align:center;padding:52px 24px 8px}
+
+/* ============ AWARD (services header, right of title) ============ */
+.award-block{justify-self:end;max-width:220px;text-align:center}
+.award-stamp{display:block;width:118px;height:118px;margin:0 auto;transform:rotate(-8deg);filter:drop-shadow(0 6px 16px rgba(14,45,80,.22))}
+.award-block__caption{margin-top:8px;font-size:11px;line-height:1.5;color:var(--muted-2)}
 .hero__title{font-family:var(--serif);font-size:52px;line-height:1.08;font-weight:700;letter-spacing:-.01em;margin-bottom:14px}
 .hero__sub{margin:0 auto;font-size:16.5px;line-height:1.6;color:var(--muted);max-width:56ch}
 
@@ -101,8 +106,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 /* ============ SERVICES ============ */
 .services{background:var(--band);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 .services__inner{max-width:1140px;margin:0 auto;padding:64px 24px}
+.services__header{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin-bottom:34px}
+.services__header .award-block{grid-column:1;grid-row:1;justify-self:start}
+.services__header .services__heading{grid-column:2;grid-row:1}
+.services__header .services__header-spacer{grid-column:3;grid-row:1}
 .services__title{font-family:var(--serif);font-size:32px;font-weight:700;letter-spacing:-.01em;text-align:center;margin-bottom:8px}
-.services__sub{margin:0 auto 40px;font-size:15px;color:var(--muted-2);text-align:center;max-width:52ch}
+.services__sub{margin:0 auto;font-size:15px;color:var(--muted-2);text-align:center;max-width:52ch}
 .services__cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:26px 24px}
 .card__title{font-family:var(--sans);font-size:17px;font-weight:800;margin-bottom:8px}
@@ -114,6 +123,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 /* ============ ABOUT ============ */
 .about{max-width:1080px;margin:0 auto;padding:72px 24px;scroll-margin-top:80px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
 .about__photo{width:100%;height:auto;border-radius:12px;box-shadow:0 4px 20px rgba(14,45,80,.12);display:block}
+.about__media{position:relative}
 .about__title{font-family:var(--serif);font-size:36px;line-height:1.15;font-weight:700;letter-spacing:-.01em;margin-bottom:18px}
 .about__body{margin-bottom:14px;font-size:15.5px;line-height:1.65;color:var(--muted)}
 .pullquote{border-left:3px solid var(--blue);padding:4px 0 4px 18px;margin-top:22px}
@@ -250,9 +260,16 @@ textarea.field__input{resize:vertical;min-height:calc(3lh + 24px)}
   .photo-grid img{height:120px;border-radius:8px}
   .photo-caption{margin-top:10px;font-size:11px}
 
+  /* award: stack under the section heading on small screens */
+  .services__header{display:block;margin-bottom:16px}
+  .award-block{margin:20px auto 0;max-width:280px}
+  .award-stamp{width:104px;height:104px}
+  .award-block__caption{font-size:11px}
+
   /* about */
   .about{padding:36px 22px;display:block}
-  .about__photo{margin-top:20px;border-radius:10px}
+  .about__media{margin-top:26px}
+  .about__photo{border-radius:10px}
   .about__title{font-size:24px;line-height:1.2;margin-bottom:12px}
   .about__body{font-size:13.5px;margin-bottom:12px}
   .pullquote{padding:2px 0 2px 14px;margin-top:16px}
