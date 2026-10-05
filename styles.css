@@ -67,18 +67,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 /* ============ HERO ============ */
 .hero__intro{text-align:center;padding:52px 24px 8px}
 
-/* ============ AWARD (hero) ============
-   wide screens: seal floats beside the headline;
-   narrower: compact seal + text row under the subheading */
-.hero-award{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 24px;text-align:left}
-.award-stamp{display:block;flex:none;width:70px;height:70px;transform:rotate(-8deg);filter:drop-shadow(0 4px 10px rgba(14,45,80,.2))}
-.hero-award__caption{max-width:340px;font-size:12.5px;line-height:1.5;color:var(--muted-2)}
-@media (min-width: 1180px){
-  .hero__intro{position:relative}
-  .hero-award{position:absolute;top:30px;right:calc(50% - 566px);width:184px;margin:0;flex-direction:column;gap:8px;text-align:center}
-  .award-stamp{width:124px;height:124px;filter:drop-shadow(0 6px 16px rgba(14,45,80,.22))}
-  .hero-award__caption{font-size:11px}
-}
 .hero__title{font-family:var(--serif);font-size:52px;line-height:1.08;font-weight:700;letter-spacing:-.01em;margin-bottom:14px}
 .hero__sub{margin:0 auto;font-size:16.5px;line-height:1.6;color:var(--muted);max-width:56ch}
 
@@ -106,10 +94,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .hero__portrait{width:100%;height:auto;display:block;border-radius:14px;border:5px solid #fff;box-shadow:0 14px 38px rgba(14,45,80,.3)}
 .hero__badge{margin-top:-14px;position:relative;display:inline-block;background:var(--ink);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:7px 15px;border-radius:99px;white-space:nowrap}
 
+/* award seal stamped on the portrait's top corner (links to the award band) */
+.hero__seal{position:absolute;top:16px;right:-42px;width:104px;height:104px;z-index:3;border-radius:50%}
+.award-stamp{display:block;width:100%;height:100%;transform:rotate(-10deg);filter:drop-shadow(0 8px 18px rgba(14,45,80,.3))}
+
 .stats{display:flex;justify-content:center;gap:56px;padding:28px 24px;border-bottom:1px solid var(--hairline);flex-wrap:wrap}
 .stat{display:flex;align-items:baseline;gap:9px}
 .stat__num{font-size:27px;font-weight:800;color:var(--blue);letter-spacing:-.02em}
 .stat__label{font-size:13px;color:var(--muted-2)}
+
+/* ============ AWARD BAND ============ */
+.award{background:var(--ink);color:#fff;scroll-margin-top:80px}
+.award__inner{max-width:880px;margin:0 auto;padding:40px 24px;display:flex;align-items:center;justify-content:center;gap:34px}
+.award__inner .award-stamp{flex:none;width:128px;height:128px;transform:rotate(-8deg);filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
+.award__eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9cc4ef;margin-bottom:8px}
+.award__title{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1.15;margin-bottom:10px}
+.award__body{font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);max-width:50ch}
 
 /* ============ SERVICES ============ */
 .services{background:var(--band);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
@@ -285,9 +285,11 @@ textarea.field__input{resize:vertical;min-height:calc(3lh + 24px)}
   .services__header{margin-bottom:16px}
 
   /* award */
-  .hero-award{margin:-8px auto 22px;gap:10px}
-  .award-stamp{width:62px;height:62px}
-  .hero-award__caption{max-width:240px;font-size:11.5px}
+  .hero__seal{top:10px;right:-36px;width:84px;height:84px}
+  .award__inner{flex-direction:column;text-align:center;gap:16px;padding:30px 22px}
+  .award__inner .award-stamp{width:96px;height:96px}
+  .award__title{font-size:22px}
+  .award__body{font-size:13px;margin:0 auto}
 
   /* about */
   .about{padding:36px 22px;display:block}
