@@ -39,10 +39,27 @@
     }
   };
 
-  /* ---------- analytics hooks (no-ops until gtag exists) ---------- */
+  /* ---------- analytics + ad conversion tracking ---------- */
+  var GOOGLE_ADS_CONVERSIONS = {
+    generate_lead: 'AW-18494647049/RlSiCKa7qZEdEInW9_JE',
+    phone_call_click: 'AW-18494647049/9Mm9CKm7qZEdEInW9_JE'
+  };
+
   function track(eventName, params) {
+    params = params || {};
     if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, params || {});
+      window.gtag('event', eventName, params);
+      if (GOOGLE_ADS_CONVERSIONS[eventName]) {
+        /* beacon so the hit survives the page handing off to the phone dialer */
+        window.gtag('event', 'conversion', {
+          send_to: GOOGLE_ADS_CONVERSIONS[eventName],
+          transport_type: 'beacon'
+        });
+      }
+    }
+    /* Microsoft Ads (UET) — no-op until its tag is added to index.html */
+    if (window.uetq && typeof window.uetq.push === 'function') {
+      window.uetq.push('event', eventName, { event_category: 'lead' });
     }
   }
   document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
