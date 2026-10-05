@@ -62,6 +62,24 @@
       window.uetq.push('event', eventName, { event_category: 'lead' });
     }
   }
+  /* enhanced conversions — hand the lead's email/phone to both ad tags,
+     which hash them before sending (disclosed in privacy.html) */
+  function shareLeadContact(email, phone) {
+    var userData = {};
+    var pid = {};
+    if (email) {
+      userData.email = pid.em = email.trim().toLowerCase();
+    }
+    var digits = (phone || '').replace(/\D/g, '');
+    if (digits.length === 10) digits = '1' + digits;
+    if (digits.length >= 11) {
+      userData.phone_number = pid.ph = '+' + digits;
+    }
+    if (!userData.email && !userData.phone_number) return;
+    if (typeof window.gtag === 'function') window.gtag('set', 'user_data', userData);
+    if (window.uetq && typeof window.uetq.push === 'function') window.uetq.push('set', { pid: pid });
+  }
+
   document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
     a.addEventListener('click', function () {
       track('phone_call_click', { link_location: a.closest('footer') ? 'footer' : a.closest('.nav') ? 'nav' : 'body' });
@@ -260,6 +278,7 @@
     submitBtn.textContent = 'Sending…';
 
     deliver(data).then(function () {
+      shareLeadContact(data.email, data.phone);
       track('generate_lead', { request_type: data.requestType, property_type: data.propertyType });
       showConfirmation(data);
     }).catch(function () {
